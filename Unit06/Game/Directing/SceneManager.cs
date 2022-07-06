@@ -52,7 +52,8 @@ namespace Unit06.Game.Directing
             AddScore(cast);
             AddLives(cast);
             AddBall(cast);
-            AddBricks(cast);
+            //Don't need bricks. Commenting it out. 
+            //AddBricks(cast);
             AddRacket(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
@@ -77,7 +78,8 @@ namespace Unit06.Game.Directing
         private void PrepareNextLevel(Cast cast, Script script)
         {
             AddBall(cast);
-            AddBricks(cast);
+            //Don't need bricks. Commenting this out. 
+            //AddBricks(cast);
             AddRacket(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
@@ -144,8 +146,9 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.BALL_GROUP);
         
-            int x = Constants.CENTER_X - Constants.BALL_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT - Constants.BALL_HEIGHT;
+            //The has the ball start in the center of the screen. 
+            int x = Constants.CENTER_X;
+            int y = Constants.CENTER_Y;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.BALL_WIDTH, Constants.BALL_HEIGHT);
@@ -158,39 +161,41 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.BALL_GROUP, ball);
         }
 
-        private void AddBricks(Cast cast)
-        {
-            cast.ClearActors(Constants.BRICK_GROUP);
 
-            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            int level = stats.GetLevel() % Constants.BASE_LEVELS;
-            string filename = string.Format(Constants.LEVEL_FILE, level);
-            List<List<string>> rows = LoadLevel(filename);
+        //Commenting out bricks because we don't need them. 
+        // private void AddBricks(Cast cast)
+        // {
+        //     cast.ClearActors(Constants.BRICK_GROUP);
 
-            for (int r = 0; r < rows.Count; r++)
-            {
-                for (int c = 0; c < rows[r].Count; c++)
-                {
-                    int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH;
-                    int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
+        //     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+        //     int level = stats.GetLevel() % Constants.BASE_LEVELS;
+        //     string filename = string.Format(Constants.LEVEL_FILE, level);
+        //     List<List<string>> rows = LoadLevel(filename);
 
-                    string color = rows[r][c][0].ToString();
-                    int frames = (int)Char.GetNumericValue(rows[r][c][1]);
-                    int points = Constants.BRICK_POINTS;
+        //     for (int r = 0; r < rows.Count; r++)
+        //     {
+        //         for (int c = 0; c < rows[r].Count; c++)
+        //         {
+        //             int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH;
+        //             int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
 
-                    Point position = new Point(x, y);
-                    Point size = new Point(Constants.BRICK_WIDTH, Constants.BRICK_HEIGHT);
-                    Point velocity = new Point(0, 0);
-                    List<string> images = Constants.BRICK_IMAGES[color].GetRange(0, frames);
+        //             string color = rows[r][c][0].ToString();
+        //             int frames = (int)Char.GetNumericValue(rows[r][c][1]);
+        //             int points = Constants.BRICK_POINTS;
 
-                    Body body = new Body(position, size, velocity);
-                    Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
+        //             Point position = new Point(x, y);
+        //             Point size = new Point(Constants.BRICK_WIDTH, Constants.BRICK_HEIGHT);
+        //             Point velocity = new Point(0, 0);
+        //             List<string> images = Constants.BRICK_IMAGES[color].GetRange(0, frames);
+
+        //             Body body = new Body(position, size, velocity);
+        //             Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
                     
-                    Brick brick = new Brick(body, animation, points, false);
-                    cast.AddActor(Constants.BRICK_GROUP, brick);
-                }
-            }
-        }
+        //             Brick brick = new Brick(body, animation, points, false);
+        //             cast.AddActor(Constants.BRICK_GROUP, brick);
+        //         }
+        //     }
+        // }
 
         private void AddDialog(Cast cast, string message)
         {
@@ -232,9 +237,13 @@ namespace Unit06.Game.Directing
         private void AddRacket(Cast cast)
         {
             cast.ClearActors(Constants.RACKET_GROUP);
+
+            int x = Constants.RACKET_WIDTH;
+            int y = Constants.SCREEN_HEIGHT / 2;
         
-            int x = Constants.CENTER_X - Constants.RACKET_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT;
+            //int x = Constants.CENTER_X - Constants.RACKET_WIDTH / 2;
+            //int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT;
+            //Racket's orginal starting position.
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.RACKET_WIDTH, Constants.RACKET_HEIGHT);
