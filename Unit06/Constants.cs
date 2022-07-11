@@ -11,7 +11,7 @@ namespace Unit06
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Batter";
+        public static string GAME_NAME = "Ping Pong Game";
         public static int FRAME_RATE = 60;
 
         // SCREEN
@@ -88,10 +88,10 @@ namespace Unit06
 
         // HUD
         public static int HUD_MARGIN = 15;
-        public static string LEVEL_GROUP = "level";
+        //public static string LEVEL_GROUP = "level";
         public static string LIVES_GROUP = "lives";
         public static string SCORE_GROUP = "score";
-        public static string LEVEL_FORMAT = "LEVEL: {0}";
+        //public static string LEVEL_FORMAT = "LEVEL: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
         public static string SCORE_FORMAT = "SCORE: {0}";
 

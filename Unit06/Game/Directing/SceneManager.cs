@@ -48,7 +48,8 @@ namespace Unit06.Game.Directing
         private void PrepareNewGame(Cast cast, Script script)
         {
             AddStats(cast);
-            AddLevel(cast);
+            //Don't need different levels. 
+            //AddLevel(cast);
             AddScore(cast);
             AddLives(cast);
             AddBall(cast);
@@ -209,17 +210,18 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.DIALOG_GROUP, label);   
         }
 
-        private void AddLevel(Cast cast)
-        {
-            cast.ClearActors(Constants.LEVEL_GROUP);
+        //Commenting out level because we don't need different levels. 
+        // private void AddLevel(Cast cast)
+        // {
+        //     //cast.ClearActors(Constants.LEVEL_GROUP);
 
-            Text text = new Text(Constants.LEVEL_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
-                Constants.ALIGN_LEFT, Constants.WHITE);
-            Point position = new Point(Constants.HUD_MARGIN, Constants.HUD_MARGIN);
+        //     Text text = new Text(Constants.LEVEL_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+        //         Constants.ALIGN_LEFT, Constants.WHITE);
+        //     Point position = new Point(Constants.HUD_MARGIN, Constants.HUD_MARGIN);
 
-            Label label = new Label(text, position);
-            cast.AddActor(Constants.LEVEL_GROUP, label);
-        }
+        //     Label label = new Label(text, position);
+        //     cast.AddActor(Constants.LEVEL_GROUP, label);
+        // }
 
         private void AddLives(Cast cast)
         {
