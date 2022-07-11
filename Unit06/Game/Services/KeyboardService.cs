@@ -25,5 +25,6 @@ namespace Unit06.Game.Services
         /// </summary>
         /// <param name="key">The given key.</param>
         bool IsKeyUp(string key);
+
     }
 }
