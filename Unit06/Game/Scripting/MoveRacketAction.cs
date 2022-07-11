@@ -29,7 +29,7 @@ namespace Unit06.Game.Scripting
 
             body.SetPosition(position);      
 
-            Racket2 racket2 = (Racket2)cast.GetFirstActor(Constants.RACKET_GROUP);
+            Racket2 racket2 = (Racket2)cast.GetFirstActor(Constants.RACKET_GROUP2);
             Body body2 = racket2.GetBody();
             Point position2 = body2.GetPosition();
             Point velocity2 = body2.GetVelocity();

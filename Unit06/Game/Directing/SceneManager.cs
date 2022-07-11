@@ -31,10 +31,11 @@ namespace Unit06.Game.Directing
             {
                 PrepareNextLevel(cast, script);
             }
-            else if (scene == Constants.TRY_AGAIN)
-            {
-                PrepareTryAgain(cast, script);
-            }
+            // else if (scene == Constants.TRY_AGAIN)
+            // {
+            //     PrepareTryAgain(cast, script);
+            // }
+            //Don't need kevek stuff. 
             else if (scene == Constants.IN_PLAY)
             {
                 PrepareInPlay(cast, script);
