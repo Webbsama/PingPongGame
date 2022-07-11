@@ -27,13 +27,9 @@ namespace Unit06.Game.Scripting
 
             if (x < Constants.FIELD_LEFT)
             {
-                ball.BounceX();
-                audioService.PlaySound(bounceSound);
             }
             else if (x >= Constants.FIELD_RIGHT - Constants.BALL_WIDTH)
             {
-                ball.BounceX();
-                audioService.PlaySound(bounceSound);
             }
 
             if (y < Constants.FIELD_TOP)
@@ -43,19 +39,24 @@ namespace Unit06.Game.Scripting
             }
             else if (y >= Constants.FIELD_BOTTOM - Constants.BALL_WIDTH)
             {
-                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-                stats.RemoveLife();
-
-                if (stats.GetLives() > 0)
-                {
-                    callback.OnNext(Constants.TRY_AGAIN);
-                }
-                else
-                {
-                    callback.OnNext(Constants.GAME_OVER);
-                    audioService.PlaySound(overSound);
-                }
+                ball.BounceY();
+                audioService.PlaySound(bounceSound);
             }
+            // else if (y >= Constants.FIELD_BOTTOM - Constants.BALL_WIDTH)
+            // {
+            //     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            //     stats.RemoveLife();
+
+            //     if (stats.GetLives() > 0)
+            //     {
+            //         callback.OnNext(Constants.TRY_AGAIN);
+            //     }
+            //     else
+            //     {
+            //         callback.OnNext(Constants.GAME_OVER);
+            //         audioService.PlaySound(overSound);
+            //     }
+            // }
         }
     }
 }
