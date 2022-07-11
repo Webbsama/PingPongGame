@@ -112,8 +112,12 @@ namespace Unit06
                 "Assets/Images/102.png"
             };
 
-        public static int RACKET_WIDTH = 106;
-        public static int RACKET_HEIGHT = 28;
+        //public static int RACKET_WIDTH = 106;
+        //public static int RACKET_HEIGHT = 28;
+        //Orginal height and width of ball. 
+
+        public static int RACKET_WIDTH = 28;
+        public static int RACKET_HEIGHT = 106;
         public static int RACKET_RATE = 6;
         public static int RACKET_VELOCITY = 7;
 
