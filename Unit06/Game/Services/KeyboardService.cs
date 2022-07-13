@@ -2,6 +2,7 @@ namespace Unit06.Game.Services
 {
     public interface KeyboardService
     {
+       
         /// <summary>
         /// Whether or not the given key is down.
         /// </summary>
