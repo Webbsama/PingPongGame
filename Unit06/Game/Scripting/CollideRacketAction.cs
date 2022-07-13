@@ -29,15 +29,16 @@ namespace Unit06.Game.Scripting
                 audioService.PlaySound(sound);
             }
 
-            Racket2 racket2 = (Racket2)cast.GetFirstActor(Constants.RACKET_GROUP2);
+            Racket racket2 = (Racket)cast.GetSecondActor(Constants.RACKET_GROUP);
             Body racketBody2 = racket2.GetBody();
-
+            
             if (physicsService.HasCollided(racketBody2, ballBody))
             {
                 ball.BounceY();
                 Sound sound = new Sound(Constants.BOUNCE_SOUND);
                 audioService.PlaySound(sound);
             }
+
 
         }
     }

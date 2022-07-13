@@ -31,11 +31,10 @@ namespace Unit06.Game.Directing
             {
                 PrepareNextLevel(cast, script);
             }
-            // else if (scene == Constants.TRY_AGAIN)
-            // {
-            //     PrepareTryAgain(cast, script);
-            // }
-            //Don't need kevek stuff. 
+            else if (scene == Constants.TRY_AGAIN)
+            {
+                PrepareTryAgain(cast, script);
+            }
             else if (scene == Constants.IN_PLAY)
             {
                 PrepareInPlay(cast, script);
@@ -56,7 +55,7 @@ namespace Unit06.Game.Directing
             AddBall(cast);
             //Don't need bricks. Commenting it out. 
             //AddBricks(cast);
-            AddRacket(cast);
+            AddRackets(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
             script.ClearAllActions();
@@ -82,7 +81,7 @@ namespace Unit06.Game.Directing
             AddBall(cast);
             //Don't need bricks. Commenting this out. 
             //AddBricks(cast);
-            AddRacket(cast);
+            AddRackets(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
@@ -99,7 +98,7 @@ namespace Unit06.Game.Directing
         private void PrepareTryAgain(Cast cast, Script script)
         {
             AddBall(cast);
-            AddRacket(cast);
+            AddRackets(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
@@ -129,7 +128,7 @@ namespace Unit06.Game.Directing
         private void PrepareGameOver(Cast cast, Script script)
         {
             AddBall(cast);
-            AddRacket(cast);
+            AddRackets(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
             script.ClearAllActions();
@@ -237,7 +236,7 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.LIVES_GROUP, label);   
         }
 
-        private void AddRacket(Cast cast)
+        private void AddRackets(Cast cast)
         {
             cast.ClearActors(Constants.RACKET_GROUP);
 
@@ -257,6 +256,23 @@ namespace Unit06.Game.Directing
             Racket racket = new Racket(body, animation, false);
         
             cast.AddActor(Constants.RACKET_GROUP, racket);
+
+            int x2 = Constants.SCREEN_WIDTH - Constants.RACKET_WIDTH;
+            int y2 = Constants.SCREEN_HEIGHT / 2;
+        
+            //int x = Constants.CENTER_X - Constants.RACKET_WIDTH / 2;
+            //int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT;
+            //Racket's orginal starting position.
+        
+            Point position2 = new Point(x2, y2);
+            Point size2 = new Point(Constants.RACKET_WIDTH, Constants.RACKET_HEIGHT);
+            Point velocity2 = new Point(0, 0);
+        
+            Body body2 = new Body(position2, size2, velocity2);
+            Animation animation2 = new Animation(Constants.RACKET_IMAGES2, Constants.RACKET_RATE, 0);
+            Racket racket2 = new Racket(body2, animation2, false);
+        
+            cast.AddActor(Constants.RACKET_GROUP, racket2);
         }
 
         private void AddScore(Cast cast)

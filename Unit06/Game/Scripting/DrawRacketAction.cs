@@ -30,6 +30,15 @@ namespace Unit06.Game.Scripting
             Image image = animation.NextImage();
             Point position = body.GetPosition();
             videoService.DrawImage(image, position);
+
+            Racket racket2 = (Racket)cast.GetSecondActor(Constants.RACKET_GROUP);
+            Body body2 = racket2.GetBody();
+
+            Animation animation2 = racket2.GetAnimation();
+            Image image2 = animation2.NextImage();
+            Point position2 = body2.GetPosition();
+            videoService.DrawImage(image2, position2);
+
         }
     }
 }

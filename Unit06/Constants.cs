@@ -109,10 +109,8 @@ namespace Unit06
             = new List<string>() {
                 "Assets/Images/100.png",
                 "Assets/Images/101.png",
-                "Assets/Images/102.png",
+                "Assets/Images/102.png"
             };
-
-        public static string RACKET_GROUP2 = "rackets2";
         
         public static List<string> RACKET_IMAGES2
             = new List<string>() {
