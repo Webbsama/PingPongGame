@@ -28,6 +28,20 @@ namespace Unit06.Game.Scripting
             {
                 racket.StopMoving();
             }
+
+            Racket2 racket2 = (Racket2)cast.GetFirstActor(Constants.RACKET_GROUP2);
+            if (keyboardService.IsKeyDown(Constants.LEFT))
+            {
+                racket2.SwingLeft();
+            }
+            else if (keyboardService.IsKeyDown(Constants.RIGHT))
+            {
+                racket2.SwingRight();
+            }
+            else
+            {
+                racket2.StopMoving();
+            }
         }
     }
 }

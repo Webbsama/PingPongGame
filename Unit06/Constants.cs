@@ -11,7 +11,7 @@ namespace Unit06
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Batter";
+        public static string GAME_NAME = "Ping Pong Game";
         public static int FRAME_RATE = 60;
 
         // SCREEN
@@ -88,10 +88,10 @@ namespace Unit06
 
         // HUD
         public static int HUD_MARGIN = 15;
-        public static string LEVEL_GROUP = "level";
+        //public static string LEVEL_GROUP = "level";
         public static string LIVES_GROUP = "lives";
         public static string SCORE_GROUP = "score";
-        public static string LEVEL_FORMAT = "LEVEL: {0}";
+        //public static string LEVEL_FORMAT = "LEVEL: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
@@ -109,12 +109,21 @@ namespace Unit06
             = new List<string>() {
                 "Assets/Images/100.png",
                 "Assets/Images/101.png",
-                "Assets/Images/102.png"
+                "Assets/Images/102.png",
+            };
+
+        public static string RACKET_GROUP2 = "rackets2";
+        
+        public static List<string> RACKET_IMAGES2
+            = new List<string>() {
+                "Assets/Images/103.png",
+                "Assets/Images/104.png",
+                "Assets/Images/105.png"
             };
 
         //public static int RACKET_WIDTH = 106;
         //public static int RACKET_HEIGHT = 28;
-        //Orginal height and width of ball. 
+        //Orginal height and width of racket. 
 
         public static int RACKET_WIDTH = 28;
         public static int RACKET_HEIGHT = 106;
