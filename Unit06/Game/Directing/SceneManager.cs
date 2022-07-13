@@ -310,7 +310,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
@@ -332,7 +332,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveBallAction());
             script.AddAction(Constants.UPDATE, new MoveRacketAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
+            //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
