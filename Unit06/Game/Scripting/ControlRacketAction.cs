@@ -1,5 +1,6 @@
 using Unit06.Game.Casting;
 using Unit06.Game.Services;
+using Raylib_cs;
 
 
 namespace Unit06.Game.Scripting
@@ -30,11 +31,11 @@ namespace Unit06.Game.Scripting
             }
 
             Racket racket2 = (Racket)cast.GetSecondActor(Constants.RACKET_GROUP);
-            if (keyboardService.IsKeyDown(Constants.UP))
+            if (keyboardService.IsKeyDown(Constants.RIGHT))
             {
                 racket2.SwingUp();
             }
-            else if (keyboardService.IsKeyDown(Constants.DOWN))
+            else if (keyboardService.IsKeyDown(Constants.LEFT))
             {
                 racket2.SwingDown();
             }

@@ -24,7 +24,7 @@ namespace Unit06.Game.Scripting
 
             if (physicsService.HasCollided(racketBody, ballBody))
             {
-                ball.BounceY();
+                ball.BounceX();
                 Sound sound = new Sound(Constants.BOUNCE_SOUND);
                 audioService.PlaySound(sound);
             }
@@ -34,7 +34,7 @@ namespace Unit06.Game.Scripting
             
             if (physicsService.HasCollided(racketBody2, ballBody))
             {
-                ball.BounceY();
+                ball.BounceX();
                 Sound sound = new Sound(Constants.BOUNCE_SOUND);
                 audioService.PlaySound(sound);
             }

@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void SwingUp()
         {
-            Point velocity = new Point(0, Constants.RACKET_VELOCITY);
+            Point velocity = new Point(0, -Constants.RACKET_VELOCITY);
             body.SetVelocity(velocity);
         }
 
@@ -60,7 +60,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void SwingDown()
         {
-            Point velocity = new Point(0, -Constants.RACKET_VELOCITY);
+            Point velocity = new Point(0, Constants.RACKET_VELOCITY);
             body.SetVelocity(velocity);
         }
 
