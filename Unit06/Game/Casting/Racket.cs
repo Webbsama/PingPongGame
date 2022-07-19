@@ -49,18 +49,18 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Swings the racket to the left.
         /// </summary>
-        public void SwingLeft()
+        public void SwingUp()
         {
-            Point velocity = new Point(-Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(0, Constants.RACKET_VELOCITY);
             body.SetVelocity(velocity);
         }
 
         /// <summary>
         /// Swings the racket to the right.
         /// </summary>
-        public void SwingRight()
+        public void SwingDown()
         {
-            Point velocity = new Point(Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(0, -Constants.RACKET_VELOCITY);
             body.SetVelocity(velocity);
         }
 

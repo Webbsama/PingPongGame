@@ -16,17 +16,31 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
-            if (keyboardService.IsKeyDown(Constants.LEFT))
+            if (keyboardService.IsKeyDown(Constants.UP))
             {
-                racket.SwingLeft();
+                racket.SwingUp();
             }
-            else if (keyboardService.IsKeyDown(Constants.RIGHT))
+            else if (keyboardService.IsKeyDown(Constants.DOWN))
             {
-                racket.SwingRight();
+                racket.SwingDown();
             }
             else
             {
                 racket.StopMoving();
+            }
+
+            Racket racket2 = (Racket)cast.GetSecondActor(Constants.RACKET_GROUP);
+            if (keyboardService.IsKeyDown(Constants.UP))
+            {
+                racket2.SwingUp();
+            }
+            else if (keyboardService.IsKeyDown(Constants.DOWN))
+            {
+                racket2.SwingDown();
+            }
+            else
+            {
+                racket2.StopMoving();
             }
         }
     }
