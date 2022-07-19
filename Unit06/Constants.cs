@@ -49,8 +49,10 @@ namespace Unit06
         // KEYS
         public static string LEFT = "left";
         public static string RIGHT = "right";
-        public static string UP = "up";
-        public static string DOWN = "down";
+        public static string UP = "w";
+        public static string DOWN = "s";
+        public static string UP2 = "i";
+        public static string DOWN2 = "k";
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";

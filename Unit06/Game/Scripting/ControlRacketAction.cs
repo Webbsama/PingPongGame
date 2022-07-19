@@ -31,11 +31,11 @@ namespace Unit06.Game.Scripting
             }
 
             Racket racket2 = (Racket)cast.GetSecondActor(Constants.RACKET_GROUP);
-            if (keyboardService.IsKeyDown(Constants.RIGHT))
+            if (keyboardService.IsKeyDown(Constants.UP2))
             {
                 racket2.SwingUp();
             }
-            else if (keyboardService.IsKeyDown(Constants.LEFT))
+            else if (keyboardService.IsKeyDown(Constants.DOWN2))
             {
                 racket2.SwingDown();
             }
